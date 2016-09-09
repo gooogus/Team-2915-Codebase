@@ -6,6 +6,7 @@ import org.usfirst.frc.team2915.robot.ControlMap;
 import org.usfirst.frc.team2915.robot.RobotMap;
 import org.usfirst.frc.team2915.robot.commands.DriveWithJoystick;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Talon;
 
@@ -17,6 +18,9 @@ public class Chasis extends Subsystem {
     public static Talon talonRightB;
     public static Talon talonLeftA;
     public static Talon talonLeftB;
+    
+	public static Encoder rightDriveEncoder;
+    
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
@@ -25,6 +29,12 @@ public class Chasis extends Subsystem {
 		talonRightB = new Talon(RobotMap.motorPortRightB);
 		talonLeftA = new Talon(RobotMap.motorPortLeftA);
 		talonLeftB = new Talon(RobotMap.motorPortLeftB);
+		
+		rightDriveEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+		
+		//The circumference of the wheel is 31.416 inches.
+		//Per pulse, the robot should move 7.854 inches because it is a k4x encoder.
+		rightDriveEncoder.setDistancePerPulse(7.854);
 		
 		//correct direction of left talons to avoid confusing negatives
 		talonLeftA.setInverted(true);
@@ -51,7 +61,6 @@ public class Chasis extends Subsystem {
     	talonLeftA.set(0);
     	talonLeftB.set(0);
     }
-    
     
 }
 
