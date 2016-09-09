@@ -6,13 +6,14 @@ package org.usfirst.frc.team2915.robot;
  * floating around.
  */
 public class RobotMap {
-	//motor ports
+	
+	//Motor Ports
 	public static int motorPortLeftA = 0;
 	public static int motorPortLeftB = 0;
 	public static int motorPortRightA = 0;
 	public static int motorPortRightB = 0;
 	
-
-
+	//Motor Encoder Ports
+	public static int rightDriveEncoder = 0;
 	
 }

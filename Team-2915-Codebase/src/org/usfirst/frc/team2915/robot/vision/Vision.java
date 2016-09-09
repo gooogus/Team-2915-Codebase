@@ -1,4 +1,4 @@
-package org.usfirst.frc.team2915.robot.subsystems;
+package org.usfirst.frc.team2915.robot.vision;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.image.ColorImage;
@@ -8,9 +8,6 @@ import edu.wpi.first.wpilibj.vision.AxisCamera;
 
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.*;
-
-
-import org.usfirst.frc.team2915.robot.subsystems.CamSettings;
 
 /**
  *
